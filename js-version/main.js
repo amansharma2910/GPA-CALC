@@ -22,11 +22,11 @@ myGPA = new GPA()
 //Prototype for Grade and Credit.
 let inputPrototype = document.querySelector('tr').cloneNode(true)
 
-//Add button listner.
+//Add subject button listner.
 document.querySelector('#add').addEventListener('click', function(){
   document.querySelector('tbody').appendChild(inputPrototype)
   inputPrototype = document.querySelectorAll('tr')[document.querySelectorAll('tr').length-1].cloneNode(true)
-  document.querySelector('#result').textContent = 'Input data...'
+  document.querySelector('#result').textContent = ''
 })
 
 //Calculate button listner.
@@ -34,18 +34,16 @@ document.querySelector('#calc').addEventListener('click', function(){
   //Clear existing variable data.
   myGPA.grIntoCr = 0
   myGPA.totalCr = 0
-  document.querySelector('#result').remove()
+  document.querySelector('#result').textContent = ''
 
   //Store data in variables from text field.
-  document.querySelectorAll('tr').forEach(function(element){
-    g = element.children[0].children[0].value
-    c = Number(element.children[1].children[0].value)
-    myGPA.addSubject(g,c)
+  gs = document.querySelectorAll('input#grade')
+  cs = document.querySelectorAll('input#credit')
+  gs.forEach(function(g,i){
+    c = cs[i]
+    myGPA.addSubject(g.value,Number(c.value))
   })
 
   //Calculate GPA with stored data.
-  let result = document.createElement('h4')
-  result.textContent = `Your GPA is ${myGPA.getGpa()}`
-  result.id = "result"
-  document.querySelector('body').appendChild(result)
+  document.querySelector('#result').textContent = `Your GPA is ${myGPA.getGpa()}`
 })
