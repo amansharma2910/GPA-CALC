@@ -5,20 +5,21 @@
   </head>
   <body align="center">
     <h2>GPA Calculator</h2>
-
-    <table align="center">
-      <tbody>
-        <tr id="sub">
-          <td><input id="grade" type="text" placeholder="Grade"></td>
-          <td><input id="credit" type="number" placeholder="Credit"></td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="subList">
+      <div class="sub">
+        <span class="index">1)</span>
+        <input class="name">
+        <input class="grade" placeholder="Grades">
+        <input class="credit" placeholder="Credits">
+        <button class="remove">x</button>
+      </div>
+    </div>
     <div>
       <button id="add">Add Subject</button>
       <button id="calc">Calculate</buton>
     </div>
-    <h4 id="result">Enter grade and credit of each subject</h4>
+    <h4 id="result">Enter your grades and credits</h4>
+    <script src="uuid.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
