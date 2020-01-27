@@ -40,22 +40,23 @@ public:
             cin.ignore();
             cout << " Enter Letter Grade : " << endl;
             cin >> letterGrade;
+            for (auto &c : letterGrade) c = toupper(c);
             cin.ignore();
             cout << "Enter course credit : " << endl;
             cin >> credit;
-            if (letterGrade == "S" || letterGrade == "s") {
+            if (letterGrade == "S" ) {
                 score = credit * S;
-            } else if (letterGrade == "A" || letterGrade == "a") {
+            } else if (letterGrade == "A" ) {
                 score = credit * A;
-            } else if (letterGrade == "B" || letterGrade == "b") {
+            } else if (letterGrade == "B" ) {
                 score = credit * B;
-            } else if (letterGrade == "C" || letterGrade == "c") {
+            } else if (letterGrade == "C" ) {
                 score = credit * C;
-            } else if (letterGrade == "D" || letterGrade == "d") {
+            } else if (letterGrade == "D"  ) {
                 score = credit * D;
-            } else if (letterGrade == "E" || letterGrade == "e") {
+            } else if (letterGrade == "E" ) {
                 score = credit * E;
-            } else if (letterGrade == "F" || letterGrade == "f") {
+            } else if (letterGrade == "F" ) {
                 score = credit * F;
             }
             totalCredits = totalCredits + credit;
